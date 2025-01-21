@@ -1,0 +1,23 @@
+<!-- rpc_app/templates/rpc_app/method_form.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>JSON-RPC Demo</title>
+</head>
+<body>
+    <h1>JSON-RPC Demo</h1>
+    
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Отправить</button>
+    </form>
+
+    {% if rpc_response %}
+    <h2>Результат</h2>
+    <pre>{{ rpc_response|safe }}</pre>
+    {% endif %}
+</body>
+</html>
